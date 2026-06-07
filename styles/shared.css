@@ -1,0 +1,133 @@
+/* =================== GOOGLE FONTS ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
+
+
+/* =================== VARIABLES CSS ========================== */
+:root {
+    --header-height: 5.5rem;
+    /* ==========Colors========== */
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsla(15, 60%, 20%);
+    --first-color-opacity: hsla(15, 60%, 20%, .4);
+
+    --second-color: hsla(25, 100%, 60%);
+    --third-color: hsla(10, 100%, 42%);
+
+    --text-color: hsl(15, 60%, 9%);
+
+    --body-color: hsl(36, 56%, 91%);
+    --white-color: hsl(0, 0%, 97%);
+
+    --scroll-bar-color: ;
+    --scroll-thumb-color: ;
+
+    --card-border-radious: 2rem;
+
+    /* ========== Font and typography ========== */
+    --body-font: "Noto Sans TC", sans-serif;
+    --title-font: "Poppins", sans-serif;
+
+    /* phone size */
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .813rem;
+
+}
+
+/* =================== Responsive typography ========================== */
+/* desktop size 968 / 1150 */
+@media screen and (min-width: 1150px) {
+    :root {
+        --h3-font-size: 1.25rem;
+    }
+}
+
+/* ================== CSS RESET / BASE ========================= */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+input,
+button,
+textarea {
+    border: none;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+p {
+    line-height: 150%;
+    letter-spacing: .1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    /* replace display block */
+    font-style: italic;
+    /* img alt */
+    object-fit: cover;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+    padding-block: 3rem;
+}
+
+/* .section__title {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-bold);
+    color: var(--title-color);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: var(--mb-2);
+} */
+
+.container {
+    max-width: 1120px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.main {
+    overflow: clip;
+}
