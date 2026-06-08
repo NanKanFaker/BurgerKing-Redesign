@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
 
     <!--==========CSS==========-->
-    <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/shared.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
             <div class="nav__links">
                 <a href="#" class="nav__logo popping-font">
                     <img src="./images/logo.png" alt="Logo">
-                    <span>Burger King</span>
+                    <span>BurgerKing</span>
                 </a>
 
                 <div class="nav__menu" id="nav-menu">
@@ -200,7 +200,9 @@
         </section>
 
         <!-- ==========ORDER========== -->
-        <section class="order">
+        <section class="order section">
+            <img class="order__bg order__bg-burger" src="./images/order__bg.png" alt="burger">
+            <img class="order__bg order__bg-fries" src="./images/order__bg2.png" alt="fries">
             <div class="order__container">
                 <div class="order__buttons">
                     <button type="button" class="order__button order__button--active">預訂外送</button>
@@ -213,37 +215,41 @@
                 </div>
 
                 <form action="#" class="order__form order__form--delivery">
-                    <div>
-                        <label for="order-date">取餐日期</label>
-                        <input id="order-date" type="date">
-                    </div>
+                    <div class="form__container">
+                        <div>
+                            <label for="order-date">取餐日期</label>
+                            <input id="order-date" type="date">
+                        </div>
 
-                    <div>
-                        <label for="order-time">取餐時間</label>
-                        <input id="order-time" type="time">
-                    </div>
-
-                    <div>
-                        <label for="order-city">外送縣市</label>
-                        <div class="form__wrapper">
-                            <select name="order-city" id="order-city" class="form__select">
-                                <option value="taipei">台北市</option>
-                                <option value="taoyuan">桃園市</option>
-                                <option value="tainan">台南市</option>
-                            </select>
-                            <i class="ri-arrow-down-s-line select-arrow"></i>
+                        <div>
+                            <label for="order-time">取餐時間</label>
+                            <input id="order-time" type="time">
                         </div>
                     </div>
 
-                    <div>
-                        <label for="order-dist">外送區域</label>
-                        <div class="form__wrapper">
-                            <select name="order-dist" id="order-dist" class="form__select">
-                                <option value="taipei">中壢區</option>
-                                <option value="taoyuan">大園區</option>
-                                <option value="tainan">復興區</option>
-                            </select>
-                            <i class="ri-arrow-down-s-line select-arrow"></i>
+                    <div class="form__container">
+                        <div>
+                            <label for="order-city">外送縣市</label>
+                            <div class="form__wrapper">
+                                <select name="order-city" id="order-city" class="form__select">
+                                    <option value="taipei">台北市</option>
+                                    <option value="taoyuan">桃園市</option>
+                                    <option value="tainan">台南市</option>
+                                </select>
+                                <i class="ri-arrow-down-s-line select-arrow"></i>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="order-dist">外送區域</label>
+                            <div class="form__wrapper">
+                                <select name="order-dist" id="order-dist" class="form__select">
+                                    <option value="taipei">中壢區</option>
+                                    <option value="taoyuan">大園區</option>
+                                    <option value="tainan">復興區</option>
+                                </select>
+                                <i class="ri-arrow-down-s-line select-arrow"></i>
+                            </div>
                         </div>
                     </div>
 
@@ -262,16 +268,16 @@
         <!-- ==========FOOTER========== -->
         <footer class="footer">
             <div class="footer__container container">
-                <div class="footer__info">
+                <div class="footer__info ">
                     <div class="footer__data">
-                        <h2 class="footer__data-title">GREAT FOOD COMES FIRST</h2>
+                        <h2 class="footer__data-title popping-font">GREAT FOOD COMES FIRST</h2>
                         <p class="footer__description">
                             漢堡王®華堡採用100%火烤純牛肉搭配口感紮實的5吋漢堡，肉片皆採全球統一的火烤設備在370度高溫下快速火烤，保留肉汁原味，多汁而不油膩，再加上新鮮番茄、洋蔥、酸黃瓜及爽口蔬菜，讓你每一口咬下都吃的到牛肉的火烤美味!
                         </p>
                     </div>
 
                     <div class="footer__social">
-                        <h2 class="footer__social-title">FOLLOW US</h2>
+                        <h2 class="footer__social-title popping-font">FOLLOW US</h2>
                         <div class="social__links">
                             <a href="#" class="social__link"><i class="ri-instagram-line"></i></a>
                             <a href="#" class="social__link"><i class="ri-facebook-line"></i></a>
