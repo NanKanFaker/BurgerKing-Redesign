@@ -25,7 +25,7 @@
 
 <body>
     <!-- ==========HEADER========== -->
-    <header class="header" id="header">
+    <header class="header">
         <nav class="nav container">
             <div class="nav__links">
                 <a href="#" class="nav__logo popping-font">
@@ -90,7 +90,7 @@
     <main class="main">
         <!-- ==========HOME========== -->
         <section class="home">
-            <div class="home__announce-bar">
+            <div class="home__announce-bar" id="annouce-bar">
                 <div class="container">
                     <i class="ri-volume-up-fill"></i>
                     <span>極黑風暴降臨！全新「黑醬安格斯牛肉堡」重磅上市，濃郁美式風味限時激推 🍔</span>
@@ -200,11 +200,11 @@
         </section>
 
         <!-- ==========ORDER========== -->
-        <section class="order section">
+        <section class="order">
             <div class="order__container">
-                <div class="order__switch-button">
-                    <button type="button" class="button-delivery">預訂外送</button>
-                    <button type="button" class="button-order">預定取餐</button>
+                <div class="order__buttons">
+                    <button type="button" class="order__button order__button--active">預訂外送</button>
+                    <button type="button" class="order__button">預定取餐</button>
                 </div>
 
                 <div class="order__title">
@@ -212,37 +212,114 @@
                     <span class="section__subtitle">線上先預訂，美味免排隊！</span>
                 </div>
 
-                <form action="#" class="order__form--delivery">
+                <form action="#" class="order__form order__form--delivery">
                     <div>
-                        <label> 預定取餐 </label>
-                        <input type="date" placeholder="YYYY/MM/DD/HH/MM">
-
-                        <label>外送縣市</label>
-                        <select>
-                            <option>基隆市</option>
-                            <option>台北市</option>
-                            <option>新北市</option>
-                            <option>桃園市</option>
-                            <option>新竹市</option>
-                            <option>新竹縣</option>
-                            <option>苗栗縣</option>
-                        </select>
-
-                        <label>外送區域</label>
-                        <select>
-                            <option>帥哥區1</option>
-                            <option>帥哥區2</option>
-                            <option>帥哥區3</option>
-                        </select>
-
-                        <label>外送地址</label>
-                        <textarea placeholder="請輸入地址"></textarea>
+                        <label for="order-date">取餐日期</label>
+                        <input id="order-date" type="date">
                     </div>
+
+                    <div>
+                        <label for="order-time">取餐時間</label>
+                        <input id="order-time" type="time">
+                    </div>
+
+                    <div>
+                        <label for="order-city">外送縣市</label>
+                        <div class="form__wrapper">
+                            <select name="order-city" id="order-city" class="form__select">
+                                <option value="taipei">台北市</option>
+                                <option value="taoyuan">桃園市</option>
+                                <option value="tainan">台南市</option>
+                            </select>
+                            <i class="ri-arrow-down-s-line select-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="order-dist">外送區域</label>
+                        <div class="form__wrapper">
+                            <select name="order-dist" id="order-dist" class="form__select">
+                                <option value="taipei">中壢區</option>
+                                <option value="taoyuan">大園區</option>
+                                <option value="tainan">復興區</option>
+                            </select>
+                            <i class="ri-arrow-down-s-line select-arrow"></i>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="order-address">外送地址</label>
+                        <input type="text" placeholder="請輸入地址">
+                    </div>
+
 
                     <button type="submit"><i class="ri-shopping-cart-2-fill"></i>前往點餐</button>
                 </form>
+
             </div>
         </section>
+
+        <!-- ==========FOOTER========== -->
+        <footer class="footer">
+            <div class="footer__container container">
+                <div class="footer__info">
+                    <div class="footer__data">
+                        <h2 class="footer__data-title">GREAT FOOD COMES FIRST</h2>
+                        <p class="footer__description">
+                            漢堡王®華堡採用100%火烤純牛肉搭配口感紮實的5吋漢堡，肉片皆採全球統一的火烤設備在370度高溫下快速火烤，保留肉汁原味，多汁而不油膩，再加上新鮮番茄、洋蔥、酸黃瓜及爽口蔬菜，讓你每一口咬下都吃的到牛肉的火烤美味!
+                        </p>
+                    </div>
+
+                    <div class="footer__social">
+                        <h2 class="footer__social-title">FOLLOW US</h2>
+                        <div class="social__links">
+                            <a href="#" class="social__link"><i class="ri-instagram-line"></i></a>
+                            <a href="#" class="social__link"><i class="ri-facebook-line"></i></a>
+                            <a href="#" class="social__link"><i class="ri-threads-line"></i></a>
+                            <a href="#" class="social__link"><i class="ri-line-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li>
+                            <h3 class="footer__nav-title">漢堡王服務</h3>
+                        </li>
+                        <li><a href="#" class="footer__nav-link">當期優惠卷</a></li>
+                        <li><a href="#" class="footer__nav-link">外送服務</a></li>
+                        <li><a href="#" class="footer__nav-link">門市清單</a></li>
+                        <li><a href="#" class="footer__nav-link">支付方式</a></li>
+                        <li><a href="#" class="footer__nav-link">商品禮卷</a></li>
+                    </ul>
+
+                    <ul class="footer__nav-list">
+                        <li>
+                            <h3 class="footer__nav-title">關於我們</h3>
+                        </li>
+                        <li><a href="#" class="footer__nav-link">關於漢堡王</a></li>
+                        <li><a href="#" class="footer__nav-link">新聞中心</a></li>
+                        <li><a href="#" class="footer__nav-link">人才招募</a></li>
+                        <li><a href="#" class="footer__nav-link">店面提供</a></li>
+                        <li><a href="#" class="footer__nav-link">聯絡我們</a></li>
+                        <li><a href="#" class="footer__nav-link">商業合</a>作</li>
+                    </ul>
+
+                    <ul class="footer__nav-list">
+                        <li>
+                            <h3 class="footer__nav-title">法律資訊</h3>
+                        </li>
+                        <li><a href="#" class="footer__nav-link">網站隱私權聲明</a></li>
+                        <li><a href="#" class="footer__nav-link">食物營養成分參考表</a></li>
+                        <li><a href="#" class="footer__nav-link">食品營養安全</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                ©余昌諺 2026 Burger King ReDesign. All rights reserved.
+            </div>
+        </footer>
     </main>
 
     <!-- ==========SHARED JS========== -->

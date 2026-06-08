@@ -12,7 +12,7 @@ showMenu('nav-menu', 'nav-toggle');
 
 /*=============== CHANGE BG HEADER ===============*/
 function scrollHeader() {
-    const header = document.getElementById('header')
+    const header = document.getElementById('annouce-bar')
 
     this.scrollY > 50 ? header.classList.add('scroll-header')
         : header.classList.remove('scroll-header');
