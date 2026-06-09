@@ -20,17 +20,32 @@ function scrollHeader() {
 
 window.addEventListener('scroll', scrollHeader);
 
-/*=============== SHOW ORDER INFO ===============*/
-
-
 /*=============== REMOVE MENU MOBILE ===============*/
-// const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav__link');
+const navSocial = document.querySelectorAll('.nav__social-link');
 
-// function linkAction(){
-//     const navMenu = document.getElementById('nav-menu')
-//     navMenu.classList.remove('show')
-// }
+function linkAction() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.remove('show-menu')
+}
 
-// navLink.forEach( (link)=>{
-//     link.addEventListener('click', linkAction)
-// })
+navLink.forEach((link) => {
+    link.addEventListener('click', linkAction)
+});
+
+navSocial.forEach((link) => {
+    link.addEventListener('click', linkAction)
+});
+
+
+/*=============== SHOW SCROLL UP ===============*/
+function scrollUp() {
+    const scrollup = document.getElementById('scroll-up')
+
+    if (scrollup) {
+        this.scrollY >= 350 ? scrollup.classList.add('show-scroll')
+            : scrollup.classList.remove('show-scroll')
+    }
+}
+
+window.addEventListener('scroll', scrollUp);
