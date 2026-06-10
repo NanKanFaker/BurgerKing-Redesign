@@ -2,12 +2,13 @@
 function showOrderInfo() {
     const buttons = document.querySelectorAll('.order__form button');
     orderInfo = document.getElementById('order-info');
+
     buttons.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             orderInfo.classList.add('show-info');
         })
-    })
+    });
 }
 
 showOrderInfo();
