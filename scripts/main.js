@@ -1,26 +1,46 @@
-/*=============== SHOW ORDER INFO ===============*/
+/*=============== SHOW ORDER/PICKUP INFO ===============*/
+const deliveryForm = document.getElementById('delivery-form'),
+    pickupForm = document.getElementById('pickup-form');
+
+deliveryForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    showOrderInfo()
+    showDialog();
+    deliveryForm.reset();
+});
+
+pickupForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    showPickupInfo()
+    showDialog();
+    pickupForm.reset();
+});
+
 function showOrderInfo() {
-    const buttons = document.querySelectorAll('.order__form button'),
-        form = document.getElementById('delivery-form'),
-        orderInfo = document.getElementById('order-info');
+    const orderInfo = document.getElementById('order-info');
 
-    buttons.forEach((btn) => {
-        btn.addEventListener('submit', (e) => {
-            e.preventDefault();
+    orderInfoContent = getOrderInfo();
 
-            orderInfoContent = getInfo();
-            console.log(orderInfoContent);
-            form.reset();
-
-            orderInfo.classList.add('show-info');
-            orderInfo.querySelector('span').textContent = `  
+    orderInfo.classList.add('show-info');
+    orderInfo.querySelector('span').textContent = `  
            預定資訊: ${orderInfoContent.orderDate}  ${orderInfoContent.orderTime}   ${orderInfoContent.orderCity}${orderInfoContent.orderDist}${orderInfoContent.orderAddress}
             `
-        })
-    });
 }
 
-function getInfo() {
+function showPickupInfo() {
+    const orderInfo = document.getElementById('order-info');
+
+    pickupInfoContent = getPickupInfo();
+
+    orderInfo.classList.add('show-info');
+    orderInfo.querySelector('span').textContent = `  
+           預定資訊: ${pickupInfoContent.pickupDate}  ${pickupInfoContent.pickupTime}   ${pickupInfoContent.pickupCity}${pickupInfoContent.pickupDist}${pickupInfoContent.pickupAddress}
+            `
+}
+
+
+/*=============== GET ORDER/PICKUP INFO ===============*/
+function getOrderInfo() {
     const form = document.getElementById('delivery-form');
     let orderDate = form.querySelector('#order-date').value,
         orderTime = form.querySelector('#order-time').value,
@@ -32,28 +52,28 @@ function getInfo() {
     return orderInfo;
 }
 
-showOrderInfo();
+function getPickupInfo() {
+    const form = document.getElementById('pickup-form');
+    let pickupDate = form.querySelector('#pickup-date').value,
+        pickupTime = form.querySelector('#pickup-time').value,
+        pickupCity = form.querySelector('#pickup-city').value,
+        pickupDist = form.querySelector('#pickup-dist').value,
+        pickupAddress = form.querySelector('#pickup-address').value;
+
+    let pickupInfo = { pickupDate, pickupTime, pickupCity, pickupDist, pickupAddress };
+    return pickupInfo;
+}
 
 
 /*=============== DIALOG ===============*/
 function showDialog() {
     const dialog = document.getElementById('dialog'),
-        openButtons = document.querySelectorAll('.order__form button'),
-        closeBtn = document.getElementById('close-btn');
-
-    openButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            dialog.showModal();
-        })
-    })
-
+        closeBtn = document.getElementById('close-btn')
+    dialog.showModal();
     closeBtn.addEventListener('click', () => {
         dialog.close();
     });
 }
-
-showDialog();
-
 
 /*=============== MODIFY ORDER INFO ===============*/
 function modifyOrderInfo() {

@@ -256,12 +256,12 @@
                     <div class="form__container">
                         <div>
                             <label for="order-date">取餐日期</label>
-                            <input id="order-date" type="date">
+                            <input id="order-date" type="date" name="date" required>
                         </div>
 
                         <div>
                             <label for="order-time">取餐時間</label>
-                            <input id="order-time" type="time">
+                            <input id="order-time" type="time" required>
                         </div>
                     </div>
 
@@ -269,7 +269,7 @@
                         <div>
                             <label for="order-city">外送縣市</label>
                             <div class="form__wrapper">
-                                <select name="order-city" id="order-city" class="form__select">
+                                <select name="order-city" id="order-city" class="form__select" required>
                                     <option value="" selected disabled>請選擇</option>
                                     <option value="大同區">大同區</option>
                                     <option value="台北市">台北市</option>
@@ -283,7 +283,7 @@
                         <div>
                             <label for="order-dist">外送區域</label>
                             <div class="form__wrapper">
-                                <select name="order-dist" id="order-dist" class="form__select">
+                                <select name="order-dist" id="order-dist" class="form__select" required>
                                     <option value="" selected disabled>請選擇</option>
                                     <option value="中壢區">中壢區</option>
                                     <option value="大園區">大園區</option>
@@ -296,7 +296,7 @@
 
                     <div>
                         <label for="order-address">外送地址</label>
-                        <input id="order-address" type="text" placeholder="請輸入地址">
+                        <input id="order-address" type="text" placeholder="請輸入地址" required>
                     </div>
 
 
@@ -306,21 +306,21 @@
                 <form action="#" id="pickup-form" class="order__form order__form--pickup">
                     <div class="form__container">
                         <div>
-                            <label for="order-date">取餐日期</label>
-                            <input id="order-date" type="date">
+                            <label for="pickup-date">取餐日期</label>
+                            <input id="pickup-date" type="date" required>
                         </div>
 
                         <div>
-                            <label for="order-time">取餐時間</label>
-                            <input id="order-time" type="time">
+                            <label for="pickup-time">取餐時間</label>
+                            <input id="pickup-time" type="time" required>
                         </div>
                     </div>
 
                     <div class="form__container">
                         <div>
-                            <label for="order-city">預定縣市</label>
+                            <label for="pickup-city">預定縣市</label>
                             <div class="form__wrapper">
-                                <select name="order-city" id="order-city" class="form__select">
+                                <select name="pickup-city" id="pickup-city" class="form__select" required>
                                     <option value="" selected disabled>請選擇</option>
                                     <option value="台北市">台北市</option>
                                     <option value="桃園市">桃園市</option>
@@ -331,9 +331,9 @@
                         </div>
 
                         <div>
-                            <label for="order-dist">預定區域</label>
+                            <label for="pickup-dist">預定區域</label>
                             <div class="form__wrapper">
-                                <select name="order-dist" id="order-dist" class="form__select">
+                                <select name="pickup-dist" id="pickup-dist" class="form__select" required>
                                     <option value="" selected disabled>請選擇</option>
                                     <option value="大同區">大同區</option>
                                     <option value="中壢區">中壢區</option>
@@ -346,9 +346,9 @@
                     </div>
 
                     <div>
-                        <label for="order-address">選擇分店</label>
+                        <label for="pickup-address">選擇分店</label>
                         <div class="form__wrapper">
-                            <select name="order-dist" id="order-dist" class="form__select">
+                            <select name="pickup-dist" id="pickup-address" class="form__select" required>
                                 <option value="" selected disabled>請選擇</option>
                                 <option value="中壢店">中壢店</option>
                                 <option value="復興店">復興店</option>
