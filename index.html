@@ -28,7 +28,7 @@
 
 <body>
     <!-- ==========HEADER========== -->
-    <header class="header">
+    <header id="header" class="header">
         <nav class="nav container">
             <div class="nav__links">
                 <a href="#" class="nav__logo popping-font">
@@ -80,10 +80,11 @@
             </div>
         </nav>
 
-        <!-- Modify-Button -->
+        <!-- Order Info -->
         <div id="order-info" class="header__order-info">
             <div class="container">
-                <span>外送地點 : 台北市中山區朱建國北路一段96號 </span>
+                <span></span>
+                <!-- Modify-Button -->
                 <button type="button" id="modify-button">修改</button>
             </div>
         </div>
@@ -94,12 +95,20 @@
         <!-- ==========HOME========== -->
         <section id="home" class="home">
             <!-- Swiper -->
-            <div class="home__swiper">
-                <div>
-                    <div class="home__banner">
-                        <img src="./images/banner.jpg" alt="Banner">
+            <div class="home__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="home__banner swiper-slide">
+                        <img src="./images/banner.jpg" alt="Banner1">
+                    </div>
+                    <div class="home__banner swiper-slide">
+                        <img src="./images/banner2.png" alt="Banner2">
+                    </div>
+                    <div class="home__banner swiper-slide">
+                        <img src="./images/banner3.jpg" alt="Banner3">
                     </div>
                 </div>
+                <!-- Pagination -->
+                <div class="home__pagination swiper-pagination"></div>
             </div>
         </section>
 
@@ -154,7 +163,7 @@
 
                     </div>
                     <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="popular__pagination swiper-pagination"></div>
                 </div>
         </section>
 
@@ -262,10 +271,10 @@
                             <div class="form__wrapper">
                                 <select name="order-city" id="order-city" class="form__select">
                                     <option value="" selected disabled>請選擇</option>
-                                    <option value="taipei">大同區</option>
-                                    <option value="taipei">台北市</option>
-                                    <option value="taoyuan">桃園市</option>
-                                    <option value="tainan">台南市</option>
+                                    <option value="大同區">大同區</option>
+                                    <option value="台北市">台北市</option>
+                                    <option value="桃園市">桃園市</option>
+                                    <option value="台南市">台南市</option>
                                 </select>
                                 <i class="ri-arrow-down-s-line select-arrow"></i>
                             </div>
@@ -276,9 +285,9 @@
                             <div class="form__wrapper">
                                 <select name="order-dist" id="order-dist" class="form__select">
                                     <option value="" selected disabled>請選擇</option>
-                                    <option value="taipei">中壢區</option>
-                                    <option value="taoyuan">大園區</option>
-                                    <option value="tainan">復興區</option>
+                                    <option value="中壢區">中壢區</option>
+                                    <option value="大園區">大園區</option>
+                                    <option value="復興區">復興區</option>
                                 </select>
                                 <i class="ri-arrow-down-s-line select-arrow"></i>
                             </div>
@@ -287,7 +296,7 @@
 
                     <div>
                         <label for="order-address">外送地址</label>
-                        <input type="text" placeholder="請輸入地址">
+                        <input id="order-address" type="text" placeholder="請輸入地址">
                     </div>
 
 
@@ -313,9 +322,9 @@
                             <div class="form__wrapper">
                                 <select name="order-city" id="order-city" class="form__select">
                                     <option value="" selected disabled>請選擇</option>
-                                    <option value="taipei">台北市</option>
-                                    <option value="taoyuan">桃園市</option>
-                                    <option value="tainan">台南市</option>
+                                    <option value="台北市">台北市</option>
+                                    <option value="桃園市">桃園市</option>
+                                    <option value="台南市">台南市</option>
                                 </select>
                                 <i class="ri-arrow-down-s-line select-arrow"></i>
                             </div>
@@ -326,10 +335,10 @@
                             <div class="form__wrapper">
                                 <select name="order-dist" id="order-dist" class="form__select">
                                     <option value="" selected disabled>請選擇</option>
-                                    <option value="taipei">大同區</option>
-                                    <option value="taipei">中壢區</option>
-                                    <option value="taoyuan">大園區</option>
-                                    <option value="tainan">復興區</option>
+                                    <option value="大同區">大同區</option>
+                                    <option value="中壢區">中壢區</option>
+                                    <option value="大園區">大園區</option>
+                                    <option value="復興區">復興區</option>
                                 </select>
                                 <i class="ri-arrow-down-s-line select-arrow"></i>
                             </div>
@@ -341,9 +350,9 @@
                         <div class="form__wrapper">
                             <select name="order-dist" id="order-dist" class="form__select">
                                 <option value="" selected disabled>請選擇</option>
-                                <option value="taipei">中壢店</option>
-                                <option value="taoyuan">復興店</option>
-                                <option value="tainan">中正店</option>
+                                <option value="中壢店">中壢店</option>
+                                <option value="復興店">復興店</option>
+                                <option value="中正店">中正店</option>
                             </select>
                             <i class="ri-arrow-down-s-line select-arrow"></i>
                         </div>

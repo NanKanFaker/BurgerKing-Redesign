@@ -24,8 +24,8 @@
     --card-stroke-color: hsla(0, 0%, 55%, .15);
     --card-shadow-color: hsla(0, 0%, 0%, .15);
 
-    --scroll-bar-color: ;
-    --scroll-thumb-color: ;
+    --scroll-bar-color: hsl(36, 56%, 81%);
+    --scroll-thumb-color: hsla(25, 100%, 60%, .7);
 
     /* ========== Font and typography ========== */
     --body-font: "Noto Sans TC", sans-serif;
@@ -407,4 +407,17 @@ img {
     .scroll__up i {
         font-size: 1.25rem;
     }
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: .75rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
 }

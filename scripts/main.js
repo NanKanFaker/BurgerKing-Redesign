@@ -1,17 +1,39 @@
 /*=============== SHOW ORDER INFO ===============*/
 function showOrderInfo() {
-    const buttons = document.querySelectorAll('.order__form button');
-    orderInfo = document.getElementById('order-info');
+    const buttons = document.querySelectorAll('.order__form button'),
+        form = document.getElementById('delivery-form'),
+        orderInfo = document.getElementById('order-info');
 
     buttons.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            orderInfoContent = getInfo();
+            console.log(orderInfoContent);
+            form.reset();
+
             orderInfo.classList.add('show-info');
+            orderInfo.querySelector('span').textContent = `  
+           預定資訊: ${orderInfoContent.orderDate}  ${orderInfoContent.orderTime}   ${orderInfoContent.orderCity}${orderInfoContent.orderDist}${orderInfoContent.orderAddress}
+            `
         })
     });
 }
 
+function getInfo() {
+    const form = document.getElementById('delivery-form');
+    let orderDate = form.querySelector('#order-date').value,
+        orderTime = form.querySelector('#order-time').value,
+        orderCity = form.querySelector('#order-city').value,
+        orderDist = form.querySelector('#order-dist').value,
+        orderAddress = form.querySelector('#order-address').value;
+
+    let orderInfo = { orderDate, orderTime, orderCity, orderDist, orderAddress };
+    return orderInfo;
+}
+
 showOrderInfo();
+
 
 /*=============== DIALOG ===============*/
 function showDialog() {
@@ -30,7 +52,7 @@ function showDialog() {
     });
 }
 
-showDialog()
+showDialog();
 
 
 /*=============== MODIFY ORDER INFO ===============*/
@@ -91,14 +113,32 @@ showForm();
 
 
 /*=============== SWIPER ===============*/
-const swiper = new Swiper('.swiper', {
+const homeSwiper = new Swiper('.home__swiper', {
+    loop: true,
+    slidesPerView: 1,
+    grabCursor: true,
+
+    pagination: {
+        el: '.home__pagination',
+        clickable: true,
+        grabCursor: true
+    },
+
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    }
+});
+
+const popularSwiper = new Swiper('.popular__swiper', {
     loop: true,
     slidesPerView: 'auto',
     centeredSlides: true,
     spaceBetween: 32,
 
     pagination: {
-        el: '.swiper-pagination',
+        el: '.popular__pagination',
         clickable: true,
     }
 });
+
